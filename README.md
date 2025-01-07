@@ -34,3 +34,36 @@ Please read the [contribution guidelines](https://github.com/opencv/opencv/wiki/
 * [Follow OpenCV on Mastodon](http://mastodon.social/@opencv) in the Fediverse
 * [Follow OpenCV on Twitter](https://twitter.com/opencvlive)
 * [OpenCV.ai](https://opencv.ai): Computer Vision and AI development services from the OpenCV team.
+
+### Basic to run OPENCV
+
+```bash
+# Install OpenCV
+pip install opencv-python
+# in your code import cv2
+import cv2 as cv
+```
+* read the image
+```python
+# read the image
+img = cv.imread(‘../Resources/Photos/cats.jpg’)
+cv.imshow(‘Cats’, img)
+cv.waitKey(0)
+
+# read the video
+capture = cv.VideoCapture(‘../Resources/Videos/dog.mp4’)
+while True:
+　isTrue, frame = capture.read()
+　if isTrue:
+　　cv.imshow(‘Video’, frame)
+
+　# press ‘q’ to exit
+　if cv.waitKey(27) & 0xFF==ord(‘q’):
+　　break
+　else:
+　　break
+capture.release()
+cv.destroyAllWindows()
+```
+
+
